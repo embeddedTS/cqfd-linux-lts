@@ -32,7 +32,7 @@ if [ "${EXTERNAL_MODULE_WILC}" == "1" ]; then
     CONFIG_WILC_SPI=m INSTALL_MOD_PATH="${TEMPDIR}" make M=../wilc3000-external-module modules modules_install
 fi
 
-TAR_NAME=linux-${DEFCONFIG%_config}-"$(date +"%Y%m%d")"-"$(git describe --abbrev=8 --dirty --always)".tar.gz
+TAR_NAME=linux-${DEFCONFIG%_defconfig}-"$(date +"%Y%m%d")"-"$(git describe --abbrev=8 --dirty --always)".tar.gz
 
 fakeroot sh -c "chmod 755 ${TEMPDIR};
         chown -R root:root ${TEMPDIR};
