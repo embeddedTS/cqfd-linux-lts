@@ -1,0 +1,16 @@
+[project]
+org='embeddedts'
+name='linux-lts'
+
+[build]
+distro = 'debianarm64'
+command = 'echo "ERROR: Pick a build flavour   →   cqfd -b <flavour> ..." && exit 1'
+
+[debianarm64]
+distro = 'debianarm64'
+
+[debianarmhf]
+distro = 'debianarmhf'
+
+[debianarmel]
+distro = 'debianarmel'
