@@ -23,7 +23,7 @@ make -j$(nproc) "$TARGET"
 TEMPDIR=$(mktemp -d)
 mkdir "${TEMPDIR}/boot/"
 cp arch/${ARCH}/boot/${TARGET} "${TEMPDIR}/boot"
-find arch/${ARCH}/boot/dts -name "*ts*.dtb*" -exec cp {} "${TEMPDIR}/boot" \;
+find arch/${ARCH}/boot/dts -regextype posix-extended -regex '.*/*ts[0-9]{4}.*\.dtb.*' -exec cp {} "${TEMPDIR}/boot" \;
 INSTALL_MOD_PATH="${TEMPDIR}" make modules_install
 make headers_install INSTALL_HDR_PATH="${TEMPDIR}" # Optional
 cp .config "${TEMPDIR}"/boot/config # Optional
