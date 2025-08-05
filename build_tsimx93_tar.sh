@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 if [ ! -e "/.dockerenv" ]; then
     cqfd -b debianarm64 init
