@@ -4,6 +4,8 @@ set -euo pipefail
 DEFCONFIG="$1"
 TARGET="$2"
 
+EXTERNAL_MODULE_WILC="${EXTERNAL_MODULE_WILC:-0}"
+
 if [ ! -d linux ]; then
 	echo "Clone your linux source tree to linux/ to build:"
 	echo "git clone https://github.com/embeddedTS/linux-lts.git linux"
